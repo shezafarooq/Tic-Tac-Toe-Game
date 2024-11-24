@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing necessary dependencies (if any)"
+  pre_build:
+    commands:
+      - echo "Preparing the environment..."
+      - ls  # Listing all files to confirm the project structure
+  build:
+    commands:
+      - echo "Building the project..."
+      - echo "Processing index.html"  # Example: Add a placeholder step for HTML processing
+      - cat index.html  # Outputs the content of the index.html to confirm the file is available
+      - echo "Hello from the build stage!"  # Placeholder message
+  post_build:
+    commands:
+      - echo "Build complete!"
+      - ls  # Final directory listing to ensure files are in place
+
+artifacts:
+  files:
+    - '**/*'  # Include all files in the output artifact (useful if there are additional build outputs)
+  discard-paths: yes  # Removes directory structure in the artifacts to keep files flat
